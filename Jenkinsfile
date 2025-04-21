@@ -1,15 +1,15 @@
-pipeline{
+pipeline {
   agent any
-  tools{
-    node.js 'NodeJS 23'
+  tools {
+    nodejs 'NodeJS 23'
   }
-  environment{
+  environment {
     REPO_URL = 'https://github.com/sahildem/jenkin-practice.git'
   }
   stages {
-    stage('Clone Repository'){
+    stage('Clone Repository') {
       steps {
-        git url: "${env.REPO_URL}", branch:'main'
+        git url: "${env.REPO_URL}", branch: 'main'
       }
     }
     stage('Install Dependencies') {
